@@ -34,14 +34,14 @@ ELASTICSEARCH_STARTUP_TIMEOUT_S=60
 CASSANDRA_STARTUP_TIMEOUT_S=60
 
 wait_for_startup Elasticsearch \
-	index \
+	elastic \
 	9200 \
 	$ELASTICSEARCH_STARTUP_TIMEOUT_S || {
     exit 1
 }
 
 wait_for_startup Cassandra \
-	db \
+	scylla \
 	9042 \
 	$CASSANDRA_STARTUP_TIMEOUT_S || {
     exit 1
